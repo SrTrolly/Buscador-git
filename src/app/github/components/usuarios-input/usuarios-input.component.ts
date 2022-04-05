@@ -8,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuariosInputComponent implements OnInit {
 
+
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
 
 }

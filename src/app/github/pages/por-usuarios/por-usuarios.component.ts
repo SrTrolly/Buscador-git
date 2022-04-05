@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GithubService } from '../../services/github.service';
+import { UsuarioGit, Item } from '../../interfaces/usuarios.interface';
 
 @Component({
   selector: 'app-por-usuarios',
@@ -8,9 +10,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PorUsuariosComponent implements OnInit {
 
-  constructor() { }
+  termino: string = ""
+  hayError: boolean = false;
+  proyectos!: Item[];
+
+  constructor(private githubService: GithubService) { }
 
   ngOnInit(): void {
+  }
+
+  buscar() {
+    this.hayError = false;
+    console.log(this.termino);
+
+    this.githubService.buscarProyectos(this.termino).subscribe(resp => {
+      if (resp.items.length === 0) {
+        console.log("arreglo vacio")
+        this.hayError = true;
+      }
+      console.log(resp.items)
+      this.proyectos = resp.items;
+
+    })
   }
 
 }

@@ -5,6 +5,8 @@ import { UsuariosInputComponent } from './components/usuarios-input/usuarios-inp
 import { UsuarioTableComponent } from './components/usuario-table/usuario-table.component';
 import { PorUsuariosComponent } from './pages/por-usuarios/por-usuarios.component';
 import { VerUsuarioComponent } from './pages/ver-usuario/ver-usuario.component';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +19,9 @@ import { VerUsuarioComponent } from './pages/ver-usuario/ver-usuario.component';
     VerUsuarioComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
+    FormsModule
   ]
 })
 export class GithubModule { }
