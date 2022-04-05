@@ -28,13 +28,13 @@ export class PorUsuariosComponent implements OnInit {
         console.log("arreglo vacio")
         this.hayError = true;
       }
-      console.log(resp.items)
+
       this.proyectos = resp.items;
 
     })
 
     this.githubService.buscarUsuario(this.termino).subscribe(resp => {
-      console.log(resp.id)
+
     })
   }
 

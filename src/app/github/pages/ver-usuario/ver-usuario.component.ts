@@ -19,9 +19,9 @@ export class VerUsuarioComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(({ id }) => {
-      console.log(id);
+
       this.githubService.buscarUsuario(id).subscribe(usuario => {
-        console.log(usuario.id)
+
         this.githubService.registrar(usuario)
         this.usuario = usuario;
       })
