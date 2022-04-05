@@ -29,9 +29,6 @@ export class GithubService {
 
   registrar(usuario: UsuarioInfo) {
     this.registros.unshift(usuario);
-
-
-    console.log("Usuario registrado", usuario);
   }
 }
 
