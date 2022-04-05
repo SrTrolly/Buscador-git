@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UsuarioGit } from '../interfaces/usuarios.interface';
+import { UsuarioInfo } from '../interfaces/perfil.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,10 @@ import { UsuarioGit } from '../interfaces/usuarios.interface';
 export class GithubService {
 
   private apiUrl: string = "https://api.github.com";
+  public registros: UsuarioInfo[] = []
+
+
+
 
   constructor(private http: HttpClient) { }
 
@@ -17,5 +22,16 @@ export class GithubService {
     return this.http.get<UsuarioGit>(url);
   }
 
+  buscarUsuario(id: string): Observable<UsuarioInfo> {
+    const url = `${this.apiUrl}/users/${id}`
+    return this.http.get<UsuarioInfo>(url);
+  }
 
+  registrar(usuario: UsuarioInfo) {
+    this.registros.unshift(usuario);
+
+
+    console.log("Usuario registrado", usuario);
+  }
 }
+

@@ -1,1 +1,31 @@
-<p>ver-usuario works!</p>
+<div class="row">
+  <div class="col-12">
+    <h1>
+      Usuario:<small> {{ usuario.name }} </small>
+    </h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <h3>Foto Perfil</h3>
+    <img [src]="usuario.avatar_url" class="img-thumbnail" />
+  </div>
+  <div class="col">
+    <h3>Informacion</h3>
+    <ul class="list-group-item">
+      <li class="list-group-item">
+        <strong>Perfil: </strong
+        ><a [href]="usuario.html_url" target="__blank"> {{ usuario.login }} </a>
+      </li>
+      <li><strong>Seguidores</strong> {{ usuario.followers }}</li>
+      <li><strong>Siguiendo</strong> {{ usuario.following }}</li>
+      <li><strong>Repositorios</strong> {{ usuario.public_repos }}</li>
+      <li><strong>Localidad</strong> {{ usuario.location }}</li>
+      <li>
+        <strong>Fecha de creacion</strong>
+        {{ usuario.created_at | date: "short" }}
+      </li>
+    </ul>
+  </div>
+  <button class="btn btn-primary" type="button" routerLink="/">Volver</button>
+</div>

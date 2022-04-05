@@ -32,6 +32,10 @@ export class PorUsuariosComponent implements OnInit {
       this.proyectos = resp.items;
 
     })
+
+    this.githubService.buscarUsuario(this.termino).subscribe(resp => {
+      console.log(resp.id)
+    })
   }
 
 }
