@@ -19,9 +19,9 @@ export class PorUsuariosComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  buscar() {
+  buscar(termino: string) {
     this.hayError = false;
-    console.log(this.termino);
+    this.termino = termino;
 
     this.githubService.buscarProyectos(this.termino).subscribe(resp => {
       if (resp.items.length === 0) {

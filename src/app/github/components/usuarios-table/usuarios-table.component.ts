@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Item } from '../../interfaces/usuarios.interface';
 
 @Component({
   selector: 'app-usuarios-table',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class UsuariosTableComponent implements OnInit {
+
+  @Input() proyectos: Item[] = [];
 
   constructor() { }
 

@@ -1,14 +1,6 @@
 <div class="col">
   <h5>Buscar</h5>
-  <form autocomplete="off" (ngSubmit)="buscar()">
-    <input
-      type="text"
-      placeholder="Buscar Proyectos..."
-      class="form-control"
-      [(ngModel)]="termino"
-      [ngModelOptions]="{ standalone: true }"
-    />
-  </form>
+  <app-usuarios-input (onEnter)="buscar($event)"></app-usuarios-input>
 </div>
 <hr />
 
@@ -16,27 +8,8 @@
   No se encontro nada con el termino {{ termino }}
 </div>
 
-<div class="row" *ngIf="proyectos.length > 0">
+<div class="row">
   <div class="col">
-    <table class="table table-hover">
-      <thead>
-        <th>#</th>
-        <th>Perfil</th>
-        <th>Nombre</th>
-        <th>Avatar</th>
-        <th>Sitio Web</th>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of proyectos; let i = index">
-          <td>{{ i + 1 }}</td>
-          <td>{{ item.login | titlecase }}</td>
-          <td>
-            <img class="small-flag" [src]="item.avatar_url" />
-          </td>
-          <td>Prueba</td>
-          <td><a [routerLink]="['/usuario', item.login]">Perfil...</a></td>
-        </tr>
-      </tbody>
-    </table>
+    <app-usuarios-table [proyectos]="proyectos"></app-usuarios-table>
   </div>
 </div>

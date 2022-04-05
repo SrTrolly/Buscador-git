@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-usuarios-input',
@@ -8,11 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsuariosInputComponent implements OnInit {
 
+  @Output() onEnter: EventEmitter<string> = new EventEmitter
+
+  termino: string = "";
+
 
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  buscar() {
+    this.onEnter.emit(this.termino);
   }
 
 
