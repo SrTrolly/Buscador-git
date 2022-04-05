@@ -2,9 +2,9 @@
   <thead>
     <th>#</th>
     <th>Perfil</th>
-    <th>Nombre</th>
     <th>Avatar</th>
-    <th>Sitio Web</th>
+    <th>Id</th>
+    <th>Ver perfil</th>
   </thead>
   <tbody>
     <tr *ngFor="let item of proyectos; let i = index">
@@ -13,7 +13,7 @@
       <td>
         <img class="small-flag" [src]="item.avatar_url" />
       </td>
-      <td>Prueba</td>
+      <td>{{ item.id }}</td>
       <td><a [routerLink]="['/usuario', item.login]">Perfil...</a></td>
     </tr>
   </tbody>
