@@ -7,6 +7,7 @@ import { PorUsuariosComponent } from './pages/por-usuarios/por-usuarios.componen
 import { VerUsuarioComponent } from './pages/ver-usuario/ver-usuario.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    FlexLayoutModule
   ]
 })
 export class GithubModule { }
