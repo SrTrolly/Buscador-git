@@ -28,7 +28,11 @@ export class GithubService {
   }
 
   registrar(usuario: UsuarioInfo) {
-    this.registros.unshift(usuario);
+    if (!this.registros.includes(usuario)) {
+      this.registros.unshift(usuario);
+      this.registros.slice(0, 10);
+
+    }
   }
 }
 

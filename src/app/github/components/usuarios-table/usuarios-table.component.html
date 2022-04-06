@@ -1,4 +1,4 @@
-<table class="table table-hover">
+<table class="table table-striped">
   <thead>
     <th>#</th>
     <th>Perfil</th>
@@ -7,7 +7,7 @@
     <th>Ver perfil</th>
   </thead>
   <tbody>
-    <tr *ngFor="let item of proyectos; let i = index">
+    <tr *ngFor="let item of proyectos | slice: desde:hasta; let i = index">
       <td>{{ i + 1 }}</td>
       <td>{{ item.login | titlecase }}</td>
       <td>
@@ -18,3 +18,10 @@
     </tr>
   </tbody>
 </table>
+<mat-paginator
+  [length]="proyectos?.length"
+  [pageSize]="pageSize"
+  (page)="cambiarPagina($event)"
+  aria-label="Select page"
+>
+</mat-paginator>

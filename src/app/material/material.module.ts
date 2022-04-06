@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
 
 
 
@@ -10,7 +11,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 
   ],
   exports: [
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatTableModule
   ]
 })
 export class MaterialModule { }
